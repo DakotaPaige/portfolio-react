@@ -11,7 +11,8 @@ export default Container;
 const Root = styled.div`
   padding: ${vwMobile(80)} ${vwMobile(10)};
   @media (min-width: ${media.tablet}) {
-    padding: ${vwTablet(120)} ${vwTablet(45)};
+    padding: ${vwTablet(120)}
+      ${props => (props.small ? vwTablet(30) : vwTablet(45))};
   }
   @media (min-width: ${media.desktop}) {
     padding: ${vw(120)} ${vw(85)};

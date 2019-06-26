@@ -6,7 +6,7 @@ module.exports = {
   stage: {
     mobile: 320,
     tablet: 768,
-    desktop: 1440,
+    desktop: 1080,
   },
   mediaQuery: {
     tablet: 576,

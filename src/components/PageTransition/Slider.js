@@ -49,32 +49,58 @@ class Slider extends Component {
 
 export default Slider;
 
-const SlideDown = keyframes`
+// const SlideDown = keyframes`
+//   0% {
+//     transform: translateY(0);
+//   }
+//   100% {
+//     transform: translateY(100%);
+//   }
+// `;
+
+// const SlideUp = keyframes`
+//   0% {
+//     transform: translateY(100%);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// `;
+
+// const SlideDownCss = css`
+//   animation: ${SlideDown} ${props => props.timeout}s ease-in-out forwards;
+// `;
+
+// const SlideUpCss = css`
+//   animation: ${SlideUp} ${props => props.timeout}s ease-in-out forwards;
+// `;
+
+const FadeOut = keyframes`
   0% {
-    transform: translateY(0);
+    opacity: 1;
   }
   100% {
-    transform: translateY(100%);
+    opacity: 0;
   }
 `;
 
-const SlideUp = keyframes`
+const FadeIn = keyframes`
   0% {
-    transform: translateY(100%);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    opacity: 1;
   }
 `;
 
-const SlideDownCss = css`
-  animation: ${SlideDown} ${props => props.timeout}s ease-in-out forwards;
+const FadeOutCss = css`
+  animation: ${FadeOut} ${props => props.timeout}s ease-in-out forwards;
 `;
 
-const SlideUpCss = css`
-  animation: ${SlideUp} ${props => props.timeout}s ease-in-out forwards;
+const FadeInCss = css`
+  animation: ${FadeIn} ${props => props.timeout}s ease-in-out forwards;
 `;
 
 const Root = styled.div`
-  ${props => (props.position === 'TO_LEFT' ? SlideDownCss : SlideUpCss)};
+  ${props => (props.position === 'TO_LEFT' ? FadeOutCss : FadeInCss)};
 `;

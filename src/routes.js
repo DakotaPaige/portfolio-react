@@ -15,6 +15,10 @@ const routes = [
     path: '/portfolio',
     component: 'pages/Portfolio/Portfolio',
   },
+  {
+    path: '/portfolio/:id',
+    component: 'pages/Portfolio/Single',
+  },
 ];
 
 const generateRoutes = function() {

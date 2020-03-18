@@ -4,10 +4,12 @@ import { createResponsiveStateReducer } from 'redux-responsive';
 import appConfig from 'src/config/app.conf';
 import counter from './counter';
 import intl from './intl';
+import project from './project';
 
 const reducer = combineReducers({
   counter,
   intl,
+  project,
   browser: createResponsiveStateReducer(
     {
       mobile: appConfig.mediaQuery.tablet,

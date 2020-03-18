@@ -24,6 +24,7 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Montserrat', sans-serif;
+     background-color: ${theme.color.lightGrey};
   }
 
   a,

@@ -5,5 +5,6 @@ export default {
     darkPurple: '#420039',
     mediumPurple: '#67597A',
     darkBlue: '#0D1B2A',
+    green: '#94AE89',
   },
 };

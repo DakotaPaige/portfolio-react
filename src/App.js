@@ -7,6 +7,7 @@ import { hot } from 'react-hot-loader';
 import { prerenderStyles } from 'src/plugins/prerender';
 import routes from 'src/routes';
 import SlideOut from 'components/PageTransition/SlideOut';
+import FullBackground from 'components/PageTransition/FullBackground';
 
 class App extends Component {
   componentDidMount() {
@@ -23,17 +24,20 @@ class App extends Component {
 
   render() {
     return (
-      <Route
-        render={({ location }) => (
-          <Root>
-            <TransitionGroup>
-              <SlideOut uniqKey={location.pathname} timeout={0.4}>
-                <Switch location={location}>{this.generateRoutes()}</Switch>
-              </SlideOut>
-            </TransitionGroup>
-          </Root>
-        )}
-      />
+      <>
+        <FullBackground />
+        <Route
+          render={({ location }) => (
+            <Root>
+              <TransitionGroup>
+                <SlideOut uniqKey={location.pathname} timeout={0.4}>
+                  <Switch location={location}>{this.generateRoutes()}</Switch>
+                </SlideOut>
+              </TransitionGroup>
+            </Root>
+          )}
+        />
+      </>
     );
   }
 }
@@ -58,6 +62,4 @@ const Root = styled.div`
   }
 `;
 
-export default (process.env.NODE_ENV === 'development'
-  ? hot(module)(App)
-  : App);
+export default process.env.NODE_ENV === 'development' ? hot(module)(App) : App;
